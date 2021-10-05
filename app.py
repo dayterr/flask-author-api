@@ -1,5 +1,3 @@
-import json
-
 from flask import Flask, jsonify, make_response, request
 from flask_sqlalchemy import SQLAlchemy
 from marshmallow import fields
@@ -93,10 +91,6 @@ def delete_author_by_id(id):
     except UnmappedInstanceError:
         return make_response('No author with such id')
     return make_response('', 204)
-
-
-#db.session.query(Author).delete()
-#db.session.commit()
 
 
 if __name__ == '__main__':
